@@ -152,7 +152,7 @@ set updatetime=100
 
 " Better Escase
 let g:better_escape_interval = 150
-let g:better_escape_shortcut = [ 'jk', 'kj' ]
+let g:better_escape_shortcut = [ 'jk', 'kj', 'fj', 'jf' ]
 
 " ------------------------------------------------------------------------------
 "  Mappings
