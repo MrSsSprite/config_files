@@ -17,7 +17,7 @@ set encoding=utf-8
 
 "colorscheme rosepine
 " Gruvbox
-set background=dark
+set background=light
 let g:gruvbox_bold=1
 let g:gruvbox_transparent_bg=1
 let g:gruvbox_sign_column='bg0'
@@ -68,11 +68,15 @@ endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current symbol
-nmap ,rn <Plug>(coc-rename)
+nnoremap :rn<CR> <Plug>(coc-rename)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
+
+" Markdown Preview Configs
+let g:mkdp_echo_preview_url = 1
+let g:mkdp_auto_close = 0
 
 " ------------------------------------------------------------------------------
 " Features
@@ -152,7 +156,7 @@ set updatetime=100
 
 " Better Escase
 let g:better_escape_interval = 150
-let g:better_escape_shortcut = [ 'jk', 'kj' ]
+let g:better_escape_shortcut = [ 'fj', 'jf' ]
 
 " ------------------------------------------------------------------------------
 "  Mappings
@@ -192,7 +196,7 @@ nnoremap <Leader>af :execute 'normal! a' . expand('%:t')<CR>
 " Functions
 function! ExpandCommentLine()
    let line = getline('.')
-   let text = substitute(line, "\\v.*\\/\\*\\W*(\\w)((\\w|\\s){-})\\W{-}\\*\\/.*", "\\1\\2", "")
+   let text = substitute(line, "\\v\\s*\\/\\*%(\\s|-)*(.{-})\\s{-}\\*\\/", "\\1", "")
    let indent = matchstr(line, '^\s*')
    let prefix = "/*"
    let suffix = "*/"
