@@ -68,7 +68,7 @@ endfunction
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current symbol
-nnoremap :rn<CR> <Plug>(coc-rename)
+command! Rn call CocActionAsync('rename')
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
