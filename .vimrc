@@ -150,6 +150,10 @@ set shiftwidth=3
 set expandtab
 set smartindent
 
+filetype indent on   " Enable filtype-specific indenting
+set cindent          " Enable specific C-style indenting
+set cinoptions+=(0   " Auto match '(' in newline
+
 set nowrap
 
 set updatetime=100
