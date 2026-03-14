@@ -16,6 +16,7 @@ call plug#end()
 set encoding=utf-8
 
 "colorscheme rosepine
+"let g:airline_theme='violet'
 " Gruvbox
 set background=light
 let g:gruvbox_bold=1
@@ -24,10 +25,10 @@ let g:gruvbox_sign_column='bg0'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='soft'
 colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='default'
-let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 
 " CoC Configurations
