@@ -87,9 +87,10 @@ date_segment=$(printf '#[fg=%s,bg=%s]%s#[fg=%s,bg=%s] %s ' \
 prev_bg="$seg_bg"
 
 # Directory segment
+current_path="${1:-$PWD}"
 seg_bg="$thm_hl_low"
 seg_fg="$thm_gold"
-seg_val=$(basename "$PWD")
+seg_val=$(basename "$current_path")
 dir_segment=$(printf '#[fg=%s,bg=%s]%s#[fg=%s,bg=%s] %s ' \
    "$seg_bg" "$prev_bg" "$separator" \
    "$seg_fg" "$seg_bg" "$seg_val")
