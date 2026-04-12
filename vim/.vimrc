@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'mechatroner/rainbow_csv'
 Plug 'jdhao/better-escape.vim'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -163,6 +164,14 @@ set updatetime=100
 let g:better_escape_interval = 150
 let g:better_escape_shortcut = [ 'fj', 'jf' ]
 
+" Add C-style comment (`//`) support
+let g:easy_align_delimiters = {
+\ '/': {
+\     'pattern':         '//\+\|/\*\|\*/',
+\     'delimiter_align': 'l',
+\     'ignore_groups':   ['!Comment'] },
+\ }
+
 " ------------------------------------------------------------------------------
 "  Mappings
 "
@@ -195,6 +204,13 @@ nnoremap <space> <nop>
 
 " Append Filename
 nnoremap <Leader>af :execute 'normal! a' . expand('%:t')<CR>
+
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 
 " ------------------------------------------------------------------------------
