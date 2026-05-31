@@ -114,6 +114,9 @@ let g:rust_recommended_style = 0
 
 autocmd BufRead,BufNewFile *.h set filetype=c
 
+" Disable the terminal version query, which stops Vim from activating modifyOtherKeys/Kitty protocols
+set t_RV=
+
 " ------------------------------------------------------------------------------
 "  Usability Options
 "
