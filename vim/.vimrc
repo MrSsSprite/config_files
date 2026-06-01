@@ -42,7 +42,7 @@ let g:coc_global_extensions = [
    \ ]
 
 " Use <C-Space> to trigger completion
-inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <c-q> coc#refresh()
 
 inoremap <silent> <c-e> :call coc#float#close_all()<CR>
 inoremap <silent> <c-e> :call coc#float#close_all()<CR>
